@@ -37,6 +37,7 @@
 当子元素为块级元素时,在设置了具体`height`与`width`属性时，只需在设置`margin: 0 auto;`即可做到水平居中
 
 ### 子元素为内联元素
+
 内联元素(`display: inline/inline-block/inline-table/inline-flex`),只需设置父元素的`text-align: center;` 即可
 
 ## 水平垂直居中

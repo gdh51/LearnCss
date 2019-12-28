@@ -194,18 +194,16 @@ div {
     padding: 0 100px;
 }
 
-.container div {
-    float: left;
-}
-
 .left {
     position: absolute;
+    top: 0;
     left: 0;
     width: 100px;
     background-color: green;
 }
 .right {
     position: absolute;
+    top: 0;
     right: 0;
     width: 100px;
     background-color: blue;
@@ -254,4 +252,4 @@ div {
 }
 ```
 
-区别于圣杯布局就是通过内部 inner 来自适应大小
+区别于圣杯布局就是通过内部 `inner` 来自适应大小

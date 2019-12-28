@@ -1,13 +1,19 @@
 # grid
 
+该布局为网格布局，它擅长将一个区域划分为几个主要的区域，然后定义这些区域的大小、位置和层次信息等关系。
+
 ## 父容器属性
 
 ### display
 
--   `grid`：生成块级网格
--   `inline-grid`：生成内联网格
+网格布局的容器一共分为两种，一种为块元素的行为，一种为内联元素的行为：
+
+- `grid`：生成块级网格
+- `inline-grid`：生成内联网格
 
 ### grid-template-columns/grid-template-rows
+
+在声明了盒模型的行为模式后，就需要通过以下两个属性来定义盒模型中每个单独的网格的大小。
 
 `grid-template-columns`：设置网格各列的宽度，每列依次排列以空格分隔。
 `grid-template-rows`：设置网格各行的高度，每行依次排列以空格分隔。
@@ -15,8 +21,10 @@
 
 ```css
 .container {
-    grid-template-columns: 300px 300px 300px; /*第一、二、三列宽为300px*/
-    grid-template-rows: 100px; /*第一行高为100px*/
+    /*第一、二、三列宽为300px*/
+    grid-template-columns: 300px 300px 300px;
+    /*第一行高为100px*/
+    grid-template-rows: 100px;
 }
 ```
 
@@ -24,7 +32,8 @@
 
 ```css
 .container {
-    grid-template-columns: [line1] 300px [line2] 300px [line3] 300px [line4]; /*共有4条网格线，默认名称为1、2、3、4*/
+    /*共有4条网格线，默认名称为1、2、3、4*/
+    grid-template-columns: [line1] 300px [line2] 300px [line3] 300px [line4];
 }
 ```
 
@@ -32,7 +41,8 @@
 
 ```css
 .container {
-    grid-template-columns: [line1] 300px [line2] 300px [line3 line3-1] 300px [line4]; /*第三条网格线有两个名字，line3、line3-1，两个都能指向它*/
+    /*第三条网格线有两个名字，line3、line3-1，两个都能指向它*/
+    grid-template-columns: [line1] 300px [line2] 300px [line3 line3-1] 300px [line4];
 }
 ```
 
@@ -56,7 +66,8 @@
 
 ```css
 .item {
-    grid-column-start: col-start 2; /*引用名为col-start且*/
+    /*引用名为col-start且*/
+    grid-column-start: col-start 2;
 }
 ```
 
@@ -76,15 +87,15 @@
 }
 ```
 
-以上的剩余空间为 总-50px ，在此基础上按 1：1 分配
+以上的剩余空间为 `总-50px` ，在此基础上按 `1：1` 分配
 
 ### grid-template-areas
 
 通过引用`grid-area`属性指定的网格区域名称来定义网格模板。重复网格区域的名称导致内容跨越这些单元格。一个点号（.）代表一个空单元格。这个语法本身可视作网格的可视化结构。可用的值为：
 
--   `网格区域名称`：由网格项的`gird-area`指定的网格区域名称
--   `.`：代表一个空白网格单元
--   `none`：不定义网格区域
+- `网格区域名称`：由网格项的`gird-area`指定的网格区域名称
+- `.`：代表一个空白网格单元
+- `none`：不定义网格区域
 
 ```css
 .item-a {
@@ -120,8 +131,8 @@ Note：声明的每一行的网格数相同;用`.`表示时,只要没用空格�
 
 定义`grid-template-rows`、`grid-template-columns`、`grid-template-areas`的简写属性。有以下值：
 
--   `none`：使用三个值的初始值
--   `grid-template-rows/grid-template-columns`：设置行高与列宽并设置`grid-template-areas`为`none`(注意带/)
+- `none`：使用三个值的初始值
+- `grid-template-rows/grid-template-columns`：设置行高与列宽并设置`grid-template-areas`为`none`(注意带/)
     例如下面：
 
 ```css
@@ -159,19 +170,19 @@ Note：`grid-template` 不会重置隐式网格属性（`grid-auto-columns`,`gri
 
 沿着 inline(行)轴线对齐网格项(设置每个网格项内部的项目位置)
 
--   `start`：将网格项对齐单元格的左侧边缘位置
--   `end`：将网格项对齐单元格的右侧边缘位置
--   `center`：将网格项对齐单元格的中间位置
--   `stretch`：默认值，填充单元格宽度
+- `start`：将网格项对齐单元格的左侧边缘位置
+- `end`：将网格项对齐单元格的右侧边缘位置
+- `center`：将网格项对齐单元格的中间位置
+- `stretch`：默认值，填充单元格宽度
 
 ### align-items
 
 沿着 block(列)轴线对齐网格项(设置每个网格项内部的项目位置)
 
--   `start`：将网格项对齐单元格的上侧边缘位置
--   `end`：将网格项对齐单元格的下侧边缘位置
--   `center`：将网格项对齐单元格的中间位置
--   `stretch`：默认值，填充单元格高度
+- `start`：将网格项对齐单元格的上侧边缘位置
+- `end`：将网格项对齐单元格的下侧边缘位置
+- `center`：将网格项对齐单元格的中间位置
+- `stretch`：默认值，填充单元格高度
 
 ### place-items
 
@@ -182,26 +193,26 @@ Note：`grid-template` 不会重置隐式网格属性（`grid-auto-columns`,`gri
 表示父容器内**网格总体**沿 inline(行)的的对齐方式。
 可能有的值：
 
--   `start`：与父容器左侧相切
--   `end`：与父容器右侧相切
--   `center`：处于父容器中间部分
--   `stretch`：调整网格项宽度使其填充整个父容器(未设置网格项宽度情况下)
--   `space-around`：最左右两侧网格项离父容器的距离是中间网格项的一半
--   `space-between`：最左右的网格项与父容器左右相切，其余网格项间距平分空隙
--   `space-evenly`：每个网格(包括与父容器边界)的间距相等
+- `start`：与父容器左侧相切
+- `end`：与父容器右侧相切
+- `center`：处于父容器中间部分
+- `stretch`：调整网格项宽度使其填充整个父容器(未设置网格项宽度情况下)
+- `space-around`：最左右两侧网格项离父容器的距离是中间网格项的一半
+- `space-between`：最左右的网格项与父容器左右相切，其余网格项间距平分空隙
+- `space-evenly`：每个网格(包括与父容器边界)的间距相等
 
 ### align-content
 
 设置父容器内**网格总体**沿 block(列)轴的对齐方式
 可能有的值：
 
--   `start`：与父容器顶部相切
--   `end`：与父容器底部相切
--   `center`：处于父容器中间部分
--   `stretch`：调整网格项高度使其填充整个父容器(未设置网格项宽度情况下)
--   `space-around`：最上下两侧网格项离父容器的距离是中间网格项的一半
--   `space-between`：最上下的网格项与父容器上下相切，其余网格项间距平分空隙
--   `space-evenly`：每个网格(包括与父容器边界)的上下间距相等
+- `start`：与父容器顶部相切
+- `end`：与父容器底部相切
+- `center`：处于父容器中间部分
+- `stretch`：调整网格项高度使其填充整个父容器(未设置网格项宽度情况下)
+- `space-around`：最上下两侧网格项离父容器的距离是中间网格项的一半
+- `space-between`：最上下的网格项与父容器上下相切，其余网格项间距平分空隙
+- `space-evenly`：每个网格(包括与父容器边界)的上下间距相等
 
 ### place-content
 
