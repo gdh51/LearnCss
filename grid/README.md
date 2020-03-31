@@ -113,7 +113,7 @@
 .item-d {
   grid-area: footer;
   background-color: aquamarine;
-
+}
 .container {
   display: grid;
   grid-template-columns: 50px 50px 50px 50px;

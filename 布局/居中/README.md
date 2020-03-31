@@ -137,6 +137,9 @@
     height: 100%;
     vertical-align: middle;
 }
+.inner {
+    vertical-algin: middle;
+}
 ```
 
 #### 父元素使用 display: table-cell; 与 vertical-align: middle; text-align: center;实现垂直居中

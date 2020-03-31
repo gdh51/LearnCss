@@ -187,4 +187,4 @@
 </div>
 ```
 
-![w3c-flex](https://www.w3.org/TR/css-flexbox-1/#valdef-flex-basis-content)
+[w3c-flex](https://www.w3.org/TR/css-flexbox-1/#valdef-flex-basis-content)
