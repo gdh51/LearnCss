@@ -214,6 +214,55 @@ div {
 }
 ```
 
+`flex`布局:
+
+```css
+.container {
+    display: flex;
+}
+.container div {
+    height: 200px;
+}
+.center {
+    flex: 1;
+    order: 2;
+    background-color: aqua;
+}
+.left {
+    order: 1;
+    width: 100px;
+    background-color: green;
+}
+.right {
+    order: 3;
+    width: 100px;
+    background-color: blue;
+}
+```
+
+`grid`布局：
+
+```css
+.container {
+    display: grid;
+    grid-template-areas: 'left center right';
+    grid-template-columns: 100px 1fr 100px;
+    grid-template-rows: 200px;
+}
+.center {
+    grid-area: center;
+    background-color: aqua;
+}
+.left {
+    grid-area: left;
+    background-color: green;
+}
+.right {
+    grid-area: right;
+    background-color: blue;
+}
+```
+
 ## 双飞翼布局
 
 ```html
