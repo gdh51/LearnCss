@@ -50,4 +50,4 @@
 
 不仅仅是上述列举的`transform`（`opacity`），理论上所以的`transform`属性都适用。但是你需要将所有的元素都设置在这个图层上。目前最新与最`cooool`的方式是为元素添加`will-change`属性，浏览器会对该属性的某些属性比如`transform/opacity`进行一些底层的优化。（目前来说，`Chrome`浏览器会对使用这两个字段的属性进行单独图层的生成）
 
-Learn and sum up from ![Pixels are expensive](https://aerotwist.com/blog/pixels-are-expensive/)
+Learn and sum up from [Pixels are expensive](https://aerotwist.com/blog/pixels-are-expensive/)
